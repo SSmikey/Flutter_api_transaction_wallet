@@ -251,4 +251,150 @@ class TransactionController extends GetxController {
   // 🔄 Real-time Updates ด้วย RxList
 }
 ```
+### ⚙️ **Services**
+
+#### 🗄️ `StorageService` (`lib/services/storage_service.dart`)
+
+```dart
+class StorageService {
+  // 🔒 ใช้ Hive Database สำหรับ Local Storage
+  // 🎫 จัดเก็บ JWT Token อย่างปลอดภัย
+  // 👤 เก็บข้อมูล User Profile
+  // 🔄 Persistent Storage ข้าม Session
+}
+```
+
+### 📱 **Screens Overview**
+
+#### 🌅 **Splash Screen** (`splash_screen.dart`)
+
+- ⏳ Loading Screen แรกเริ่ม
+- 🔍 ตรวจสอบสถานะการล็อกอิน
+- 🧭 นำทางไปหน้าที่เหมาะสม (Login/Home)
+
+#### 🔑 **Login Screen** (`login.dart`)
+
+- 📝 ฟอร์มเข้าสู่ระบบด้วยอีเมล/รหัสผ่าน
+- ✅ Form Validation ครบถ้วน
+- ⏳ Loading State ขณะประมวลผล
+- ⚠️ Error Handling และแสดงข้อความ
+
+#### 📝 **Register Screen** (`regis.dart`)
+
+- 📋 ฟอร์มสมัครสมาชิกใหม่
+- 🔒 ตรวจสอบความปลอดภัยรหัสผ่าน
+- 🌐 Integration กับ API Backend
+
+#### 🔑 **Forget Password** (`forget_pass.dart`)
+
+- 📧 ฟอร์มรีเซ็ตรหัสผ่านผ่านอีเมล
+- ✉️ ส่งลิงก์รีเซ็ตไปยังอีเมล
+
+#### 🏠 **Home Screen** (`home.dart`)
+
+- 📊 Dashboard หลักแสดงรายการธุรกรรม
+- 🧭 Navigation Drawer พร้อม Menu
+- ➕ FloatingActionButton สำหรับเพิ่มรายการ
+- 🔄 Real-time Updates ด้วย GetX Obx
+
+#### 📝 **Transaction Form** (`transaction_form.dart`)
+
+- 📋 ฟอร์มเพิ่ม/แก้ไข/ลบรายการธุรกรรม
+- 📅 Date Picker สำหรับเลือกวันที่
+- 💰 DropDown เลือกประเภท รายรับ/รายจ่าย
+- 🔄 Modal Bottom Sheet Design
+
+## 🧪 การทดสอบและควบคุมคุณภาพ
+
+### 🔍 คำสั่งทดสอบ
+
+```bash
+# 🧪 รันการทดสอบทั้งหมด
+flutter test
+
+# 📋 ตรวจสอบ Code Quality และ Linting
+flutter analyze
+
+# 🏗️ ทดสอบการ Build
+flutter build apk --debug
+
+# 📊 ตรวจสอบ Dependencies
+flutter pub deps
+```
+
+### 🎯 Test Coverage
+
+- ✅ **Unit Tests** - Logic และ Business Rules
+- ✅ **Widget Tests** - UI Components
+- ⚠️ **Integration Tests** - End-to-End Testing (ขณะพัฒนา)
+
+## 📱 รองรับแพลตฟอร์ม
+
+<div align="center">
+
+| Platform       | Status          | Notes                   |
+| -------------- | --------------- | ----------------------- |
+| 🤖 **Android** | ✅ Full Support | API Level 21+           |
+| 🍎 **iOS**     | ✅ Full Support | iOS 12.0+               |
+| 🌐 **Web**     | ⚠️ Limited      | ไม่รองรับ Local Storage |
+| 💻 **Desktop** | ⚠️ Limited      | Windows/macOS/Linux     |
+
+## 🔒 ฟีเจอร์ด้านความปลอดภัย
+
+- 🔐 **JWT Token Authentication** - ระบบยืนยันตัวตนที่ปลอดภัย
+- 🗄️ **Secure Local Storage** - จัดเก็บข้อมูลด้วย Hive Encryption
+- ✅ **Input Validation** - ตรวจสอบข้อมูลนำเข้าทุกฟิลด์
+- ⚠️ **Error Handling** - จัดการข้อผิดพลาดอย่างเหมาะสม
+- ⏰ **Auto-logout** - ออกจากระบบอัตโนมัติเมื่อ Token หมดอายุ
+- 🛡️ **API Security** - ส่งข้อมูลผ่าน HTTPS เท่านั้น
+
+## 🤝 แนวทางการพัฒนาต่อ
+
+### 📋 Code Style Guidelines
+
+```dart
+// ✅ ใช้ Flutter/Dart conventions
+class TransactionController extends GetxController {
+  // ✅ Comments เป็นภาษาไทย (อธิบายโค้ด)
+  // ✅ ชื่อตัวแปรและฟังก์ชันเป็นภาษาอังกฤษ
+
+  final RxList<TransactionData> transactions = <TransactionData>[].obs;
+
+  // เพิ่มรายการธุรกรรมใหม่
+  void addTransaction(TransactionData transaction) {
+    transactions.add(transaction);
+  }
+}
+```
+
+### 🔄 Git Workflow
+
+```bash
+# 📝 Commit Message Conventions
+git commit -m "feat: add transaction CRUD functionality"
+git commit -m "fix: handle API timeout error"
+git commit -m "style: update transaction card UI"
+git commit -m "refactor: improve auth controller structure"
+git commit -m "docs: update README with API documentation"
+```
+
+### 🎯 Development Roadmap
+
+- [ ] 📊 **Analytics Dashboard** - สถิติรายรับ-รายจ่าย
+- [ ] 📁 **Category Management** - จัดหมวดหมู่รายการ
+- [ ] 📤 **Export/Import** - ส่งออกข้อมูล CSV/PDF
+- [ ] 🌙 **Dark Mode** - โหมดธีมมืด
+- [ ] 🔔 **Push Notifications** - แจ้งเตือนรายการ
+- [ ] 📈 **Charts & Reports** - กราฟและรายงาน
+
+---
+
+## ⭐ ตัวอย่างหน้าจอผู้ใช้งาน (User Interface)
+
+![หน้าจอแอป](./assets/images/app_tangja.png)
+
+> 💸 **ตังค์จ๋า พี่มาแล้วจ้า แอปพลิเคชันดีๆ มีให้คุณได้ใช้**
+
+
+
 
