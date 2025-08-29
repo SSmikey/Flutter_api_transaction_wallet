@@ -225,6 +225,30 @@ flutter:
 | `POST`   | `/api/transaction`        | เพิ่มรายการใหม่ | `Authorization: Bearer {token}` |
 | `PUT`    | `/api/transaction/{uuid}` | แก้ไขรายการ     | `Authorization: Bearer {token}` |
 | `DELETE` | `/api/transaction/{uuid}` | ลบรายการ        | `Authorization: Bearer {token}` |
+## 🏗️ ฟีเจอร์โดยละเอียด
 
+### 🎮 **Controllers**
 
+#### 🔐 `AuthController` (`lib/controllers/auth_controller.dart`)
+
+```dart
+class AuthController extends GetxController {
+  // 🚪 จัดการสถานะการเข้าสู่ระบบ
+  // 🔑 เชื่อมต่อ API Login/Register/Reset Password
+  // 💾 จัดเก็บ Token ใน Hive Local Storage
+  // 🔄 Auto-login Detection เมื่อเปิดแอป
+}
+```
+
+#### 💸 `TransactionController` (`lib/controllers/transac_controller.dart`)
+
+```dart
+class TransactionController extends GetxController {
+  // 📊 จัดการ State ของรายการธุรกรรม
+  // ➕ เพิ่มรายการใหม่ (addTransaction)
+  // ✏️ แก้ไขรายการ (updateTransaction)
+  // 🗑️ ลบรายการ (removeTransaction)
+  // 🔄 Real-time Updates ด้วย RxList
+}
+```
 
