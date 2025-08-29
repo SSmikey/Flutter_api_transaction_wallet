@@ -45,8 +45,7 @@
 
 ## 🎯 API ที่ใช้งาน
 
-**Backend API:** [`https://transactions-cs.vercel.app`](https://transactions-cs.vercel.app)  
-**GitHub Repository:** [Apisit250aps/transactions](https://github.com/Apisit250aps/transactions)
+**Backend API:** [`https://transactions-cs.vercel.app`](https://transactions-cs.vercel.app)
 
 ## 📱 ฟีเจอร์หลัก
 
@@ -225,6 +224,7 @@ flutter:
 | `POST`   | `/api/transaction`        | เพิ่มรายการใหม่ | `Authorization: Bearer {token}` |
 | `PUT`    | `/api/transaction/{uuid}` | แก้ไขรายการ     | `Authorization: Bearer {token}` |
 | `DELETE` | `/api/transaction/{uuid}` | ลบรายการ        | `Authorization: Bearer {token}` |
+
 ## 🏗️ ฟีเจอร์โดยละเอียด
 
 ### 🎮 **Controllers**
@@ -251,6 +251,7 @@ class TransactionController extends GetxController {
   // 🔄 Real-time Updates ด้วย RxList
 }
 ```
+
 ### ⚙️ **Services**
 
 #### 🗄️ `StorageService` (`lib/services/storage_service.dart`)
@@ -394,7 +395,3 @@ git commit -m "docs: update README with API documentation"
 ![หน้าจอแอป](./assets/images/app_tangja.png)
 
 > 💸 **ตังค์จ๋า พี่มาแล้วจ้า แอปพลิเคชันดีๆ มีให้คุณได้ใช้**
-
-
-
-
